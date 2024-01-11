@@ -8,3 +8,100 @@ body{
     height: 82vh; 
 }
 
+.footer{
+    background-color: #61d3ea;
+}
+
+nav{
+    background-color: #61d3ea;
+    box-shadow: 5px 5px 10px 0 rgba(101, 92, 92, 0.5);
+}
+
+.nav-link{
+    font-size: large;
+    color: #03045e!important;
+    padding-left: 20px !important;
+}
+
+.nav-link:hover{
+    color: aliceblue !important ;
+}
+/* Header starts */
+
+nav .title{
+    color: #03045e !important;
+}
+/* Header ends */
+
+/* home starts */
+
+main .lead{
+    /* width:80%; */
+    padding: 0 300px;
+    color: #023e8a;
+
+}
+main h1{
+    color: #03045e;
+}
+main .lead a{
+    border: 1px solid black;
+    border-radius: 5px ;
+    color: aliceblue;
+    background-color:#023e8a;
+}
+
+/* home ends */
+
+
+/* blog list starts */
+
+.blog-list{
+    padding-bottom: 30px;
+}
+
+.blog-list .card{
+    width: 14rem;
+    margin-bottom: 20px;
+    background-color: #90e0ef;
+    box-shadow: 5px 5px 10px 0 rgba(91, 87, 87, 0.5);
+}
+
+.blog-list .card-title{
+    color: #03045e;
+}
+.blog-list .card-subtitle{
+    color: #023e8a !important;
+}
+
+.blog-list .card-text{
+    color: #023e8a !important;
+}
+.p-btn{
+    border: 1px solid black;
+    border-radius: 5px ;
+    color: aliceblue;
+    background-color:#023e8a;
+}
+.blog-list .del-icon{
+    color: red;
+}
+.blog-list .edit-icon{
+    color: #023e8a;
+}
+
+/* blog list ends */
+/* create blog  starts */
+
+.create-blog{
+    margin: 0 100px;
+    padding: 10px 10px ;
+}
+.create-blog input , .create-blog textarea{
+    background-color: #90e0ef;
+}
+
+
+/* create blog  ends */
+
+
