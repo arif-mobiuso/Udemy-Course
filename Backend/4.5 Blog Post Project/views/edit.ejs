@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs")  %>
+
+
+<div class="container pt-3" style="width: 70%;">
+    <form action="/edit/<%= blog.postId%>"  method="post">
+        <div class="form-group" >
+          <label for="inputTitle">Blog Title</label>
+          <input type="text" name="title" value="<%= blog.title %>" class="form-control" id="inputTitle"  placeholder="Enter Title">
+        </div>
+        <div class="form-group" >
+            <label for="inputCategory">Blog Category</label>
+            <input type="text" name="category" value="<%= blog.category%>" class="form-control" id="inputCategory" placeholder="Enter Category ">
+          </div>
+          <div class="form-group" >
+            <label for="inputDesc">Blog Description</label>
+            <input type="text" name="desc" value="<%= blog.description %>" class="form-control" id="inputDesc" placeholder="Enter Description">
+          </div>
+          <div class="form-group" >
+            <label for="inputContent">Blog Content</label>
+            <textarea class="form-control"  name="content" id="inputContent" rows="3"><%= blog.content %></textarea>
+        </div>
+        <div class="form-group" >
+            <label for="inputName">Author Name</label>
+            <input type="text" value="<%= blog.authorName %>" name="name" class="form-control" id="inputName" placeholder="Enter author Name">
+          </div>
+          
+          <div class="text-center ">
+              <button type="submit" class="btn btn-primary text-center " style="padding-left:40% ; padding-right: 40%;" >Submit</button>
+          </div>
+      </form>
+    
+    </div>
+</div>
+<%- include("partials/footer.ejs")  %>

@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs")  %>
+
+<div class="container pt-3" style="width: 70%;">
+<form action="/blogs" method="post">
+    <div class="form-group" >
+      <label for="inputTitle">Blog Title</label>
+      <input type="text" name="title" class="form-control" id="inputTitle"  placeholder="Enter Title">
+    </div>
+    <div class="form-group" >
+        <label for="inputCategory">Blog Category</label>
+        <input type="text" name="category" class="form-control" id="inputCategory" placeholder="Enter Category ">
+      </div>
+      <div class="form-group" >
+        <label for="inputDesc">Blog Description</label>
+        <input type="text" name="desc" class="form-control" id="inputDesc" placeholder="Enter Description">
+      </div>
+      <div class="form-group" >
+        <label for="inputContent">Blog Content</label>
+        <textarea class="form-control"  name="name" id="inputContent" rows="3"></textarea>
+    </div>
+    <div class="form-group" >
+        <label for="inputName">Author Name</label>
+        <input type="text" name="content" class="form-control" id="inputName" placeholder="Enter author Name">
+      </div>
+      
+      <div class="text-center ">
+          <button type="submit" class="btn btn-primary text-center " style="padding-left:40% ; padding-right: 40%;" >Submit</button>
+      </div>
+  </form>
+
+</div>
+
+
+<%- include("partials/footer.ejs")  %>
