@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lisper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/main.css"> -->
+  <style>
+
+body {
+  background-color: black;
+  color: yellow;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: balck;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  border: 2px solid yellow;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-left: 5px;
+  border: 2px solid yellow;
+  border-radius: 5px;
+}
+
+label {
+  padding-left: 10px;
+  color: yellow;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+select,
+input[type=number] {
+  background-color: black;
+  color: yellow;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+#get {
+  background-color: yellow;
+  color: black;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.get-joke-area {
+  border: 2px solid yellow;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: yellow;
+  margin-top: 20px;
+}
+
+.byCategory p,
+.bylanguage p,
+.blacklistFlags p,
+.idRange p,
+.amount p {
+  margin: 0;
+}
+
+.byCategory,
+.bylanguage,
+.blacklistFlags,
+.idRange,
+.amount {
+  margin-bottom: 20px;
+}
+
+.byCategory,
+.bylanguage,
+.blacklistFlags,
+.idRange,
+.amount {
+  border-bottom: 2px solid yellow;
+  padding-bottom: 20px;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    
+    <form method="post" id="myform" action="/getJoke">
+
+      <div class="byCategory row">
+
+      <div class="left col-lg-4">
+        <p>
+          category :
+        </p>
+      </div>
+      <div class="right col-lg-8">
+        <input type="radio" class="" name="catselect" value="any" onchange="reRender()"> <label> any</label>
+        <input type="radio" name="catselect" class="" value="multi" id="cat-radio2" onchange="reRender()"> <label> category</label>
+        <div id="multiSelect">
+          <input type="checkbox" name="category" value="Programming" disabled id="checkbox-1"><label> Programming</label>
+          <input type="checkbox" name="category" value="Misc" disabled id="checkbox-2"><label>Misc </label>
+          <input type="checkbox" name="category" value="Dark" disabled id="checkbox-3"><label> Dark</label>
+          <input type="checkbox" name="category" value="Pun" disabled id="checkbox-4"><label> Pun</label>
+          <input type="checkbox" name="category" value="Spooky" disabled id="checkbox-5"><label> Spooky</label>
+          <input type="checkbox" name="category" value="Christmas" disabled id="checkbox-6"><label> Christmas</label>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="bylanguage row">
+      <div class="left col-lg-4">
+        <p>
+          language :
+        </p>
+      </div>
+      <div class="right col-lg-8">
+        <select name="language" id="languageCategory">
+          <option value="en">en - English</option>
+          <option value="cs">cs - Czech</option>
+          <option value="de">de - German</option>
+          <option value="es">es - Spanish</option>
+          <option value="fr">fr - French</option>
+          <option value="pt">pt - Portugese</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="blacklistFlags row">
+      <div class="left col-lg-4">
+        <p>
+          select flags to blacklist :
+        </p>
+      </div>
+      <div class="right col-lg-8">
+        <input type="checkbox" name="flag" value="nsfw"  id="flag-checkbox-1"><label> nswf</label>
+        <input type="checkbox" name="flag" value="religious"  id="flag-checkbox-2"><label>religios </label>
+        <input type="checkbox" name="flag" value="political"  id="flag-checkbox-3"><label> political</label>
+        <input type="checkbox" name="flag" value="racist"  id="flag-checkbox-4"><label> racist</label>
+        <input type="checkbox" name="flag" value="sexist"  id="flag-checkbox-5"><label> sexist</label>
+        <input type="checkbox" name="flag" value="explicit"  id="flag-checkbox-6"><label> explicit</label>
+      </div>
+      
+    </div>
+
+    <!-- <div class="byFormat">
+      <div class="left">
+        <p>select response format : </p>
+      </div>
+      <div class="right">
+        <input type="radio"  id="radio-format-1"  ><label for="radio-format-1">default(json)</label>
+        <input type="radio" name="format" id="radio-format-2"  value="xml"><label for="radio-format-2">xml</label>
+        <input type="radio" name="format" id="radio-format-3"  value="yaml"><label for="radio-format-3">yaml</label>
+        <input type="radio" name="format" id="radio-format-4"  value="text"><label for="radio-format-4">text</label>
+      </div>
+    </div> -->
+
+
+    <div class="idRange row">
+      <div class="left col-lg-4">
+        <p>
+          Search for a joke in this ID range:
+        </p>
+      </div>
+      <div class="right col-lg-8">
+        <label for="range-start">From</label><input type="number" name="from" id="range-start">
+        <label for="range-end">To</label><input type="number" name="to" id="range-end">
+      </div>
+    </div>
+
+    <div class="amount row">
+      <div class="left col-lg-4">
+        <p>Amount of Jokes</p>
+      </div>
+      <div class="right col-lg-8">
+        <label for="input-number1">amount</label>
+        <input type="number" name="amount" id="input-number1">
+      </div>
+    </div>
+
+
+
+    <div class="get-joke-area">
+      <input id="get" type="submit" value="GETJOKE" formaction="/getJoke">
+    </div>
+    </form>
+    
+    <%if(locals.joke){%>
+      <div class=" flex">
+        <h1>Jokes</h1>
+        <p>
+          
+          Setup :<%= joke.setup %>
+        </p>
+        <br>
+        <p>
+          delivery :<%= joke.delivery %>
+        </p>
+      </div>
+
+    <%}else{%>
+
+    <%}%>
+    
+    
+
+
+  </div>
+
+
+
+
+  <script>
+    function reRender() {
+      var customRadio = document.getElementById("cat-radio2");
+      var checkboxes = document.querySelectorAll("#multiSelect input[type='checkbox']");
+      if (customRadio.checked) {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.disabled = false;
+        });
+      } else {
+        checkboxes.forEach(function (checkbox) {
+          checkbox.disabled = true;
+        });
+      }
+    }
+  </script>
+
+</body>
+
+</html>
