@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs')%>
+    <div class="add-book lr-margin">
+        <form action="/books" method="post">
+            <div class="form-group">
+                <label for="inputTitle">Book Title</label>
+                <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Enter Title">
+            </div>
+
+            <div class="form-group">
+                <label for="inputName">Author Name</label>
+                <input type="text" name="author" class="form-control" id="inputName" placeholder="Enter author Name">
+            </div>
+            <div class="form-group">
+                <label for="inputISBN">ISBN number</label>
+                <input type="number" name="isbn" class="form-control" id="inputTitle" placeholder="Enter ISBN number of book ">
+            </div>
+            <div class="form-group">
+                <label for="inputRating"> Rating out of 10 </label>
+                <input type="number" name="rating" class="form-control" id="inputRating" placeholder="Enter rating  of book ">
+            </div>
+            <div class="form-group">
+                <label for="inputContent">Book Summary </label>
+                <textarea class="form-control" name="summary" id="inputSumary" rows="3"></textarea>
+            </div>
+
+            <div class="text-center ">
+                <button type="submit" class="btn text-center p-btn" style="padding-left:40% ; padding-right: 40%;">Add
+                    book to list</button>
+            </div>
+        </form>
+    </div>
+
+
+    <%- include('partials/footer.ejs')%>

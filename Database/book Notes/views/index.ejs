@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<div class="row books-list ">
+    <%  books.forEach((book)=>{ %>
+<div class="col-md-6 col-lg-12">
+    <div class="row  border rounded overflow-hidden ">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h2 class="mb-0">title : <%= book.title %></h2>
+        <h5>author name  : <%= book.author  %></h3>
+        <div class="mb-1 text-body-secondary"><%= book.date %></div>
+        <h5>ISBN : <%= book.isbn %></h5>
+        <h5>rating  : <%= book.rating %></h5>
+        <p class="mb-auto">Summary : <%= book.summary %> </p>
+        <a href="/notes/<%=book.id%>" class="icon">
+          write notes... 
+          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
+        </a>
+      </div>
+      <div class="col-d-md-none d-sm-none d-lg-inline">
+          <img width"200" height="250" src="<%= book.img %>" alt="">
+        </div>
+    </div>
+</div>
+<% }) %>
+</div>
+
+
+<%- include('partials/footer.ejs') %>
