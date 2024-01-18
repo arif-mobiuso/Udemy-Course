@@ -1,17 +1,21 @@
-<div class="notes">
-    <div class="fs-3">Notes</div>
-    <% notes.forEach((note) => {%>
-        <ul>
-            <li class="fs-5"><%= note.note %></li>
-        </ul>
-    <% }); %>
-</div>
 
-<form action="/books/<%=bookId%>/notes" method="post">
-    <textarea name="note" id="noteInput" cols="100" hidden="true" rows="5" ></textarea>
-    <button type="submit" id="done" class="btn btn-dark" hidden="true"> Done</button>
-</form>
-<button id="add" onclick="handler()"> Add Note</button>
+<div class="container">
+    <div class="notes">
+        <div class="fs-3">Notes</div>
+        <% notes.forEach((note) => {%>
+        <ul class="list-group">
+            <li class="list-group-item"><%= note.note %></li>
+        </ul>
+        <% }); %>
+    </div>
+
+    <form action="/books/<%=bookId%>/notes" method="post">
+        <textarea name="note" id="noteInput" cols="100" class="form-control" rows="5" hidden="true" required></textarea>
+        <button type="submit" id="done" class="btn btn-dark" hidden="true">Done</button>
+    </form>
+
+    <button id="add" onclick="handler()" class="btn btn-primary mt-3">Add Note</button>
+</div>
 
   <script>
     function handler() {
