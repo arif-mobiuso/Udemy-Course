@@ -47,9 +47,9 @@ const fectchUsers = () => {
                 const users = res.data; 
                 dispatch(fetchUsersSuccess(users))
             })
-            .catch(err => [
-            dispatch(fetchUsersFailure(err))
-        ])
+            .catch(err => {
+                dispatch(fetchUsersFailure(err))
+            })
     }
 }
 
